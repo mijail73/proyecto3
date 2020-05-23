@@ -6,13 +6,25 @@
 package proyecto3icc;
 
 /**
- *
- * @author mijail
+ * Objeto que nos sirve para modelar la parte de un animal
+ * @author oscar
  */
 public class Parte {
     private String nombre;
-    private int cantidad;
     private String color;
+    private int cantidad;
+    
+    public Parte(String nombre, String color, int cantidad) {
+        this.nombre = nombre;
+        this.color = color;
+        this.cantidad = cantidad;
+    }
+    
+    public Parte(Parte a) {
+        this.nombre = a.nombre;
+        this.color = a.color;
+        this.cantidad = a.cantidad;
+    }
 
     public String getNombre() {
         return nombre;
@@ -37,5 +49,10 @@ public class Parte {
     public void setColor(String color) {
         this.color = color;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Parte{" + "nombre=" + nombre + ", color=" + color +
+                ", cantidad=" + cantidad + '}';
+    }
 }
